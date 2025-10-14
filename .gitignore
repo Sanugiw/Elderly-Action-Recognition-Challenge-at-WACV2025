@@ -9,7 +9,7 @@ data/optical_flow/
 checkpoints/
 *.log
 .env
-venv/
+venv310/
 .vscode/
 *.mp4
 *.avi
