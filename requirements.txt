@@ -1,0 +1,41 @@
+# Core ML Libraries
+torch>=2.0.0
+torchvision>=0.15.0
+timm>=0.10.0
+pytorchvideo>=0.1.5
+
+# Video Processing
+decord
+opencv-python
+opencv-contrib-python
+moviepy
+
+# Data Processing
+pandas
+numpy
+scikit-learn
+pillow
+
+# Training Utilities
+tqdm
+wandb
+
+# Augmentation
+albumentations
+
+# Pose Estimation
+mediapipe
+ultralytics
+
+# Graph Neural Networks
+torch-geometric
+torch-scatter
+torch-sparse
+
+# Optical Flow
+flownet2-pytorch
+
+# Utilities
+pyyaml
+matplotlib
+seaborn
