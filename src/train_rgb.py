@@ -112,7 +112,6 @@ def main(args):
         )
     
     # For this initial version, we'll use dummy data
-    # In Day 2, you'll replace this with actual training data
     print("Note: Using test videos for initial testing")
     print("Replace with training data when available")
     
