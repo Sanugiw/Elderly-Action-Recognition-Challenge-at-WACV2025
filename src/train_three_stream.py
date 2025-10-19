@@ -406,27 +406,41 @@ if __name__ == '__main__':
     parser.add_argument('--data_dir', type=str, default='data/videos')
     parser.add_argument('--pose_dir', type=str, default='data/poses')
     parser.add_argument('--flow_dir', type=str, default='data/optical_flow')
-    parser.add_argument('--num_classes', type=int, default=10)
     parser.add_argument('--num_frames', type=int, default=16)
-    parser.add_argument('--fusion_type', type=str, default='concat')
-    parser.add_argument('--loss_type', type=str, default='cross_entropy', choices=['cross_entropy', 'focal', 'label_smooth'])
-    parser.add_argument('--optimizer', type=str, default='adamw', choices=['adamw', 'sgd'])
-    parser.add_argument('--lr', type=float, default=1e-4)
-    parser.add_argument('--weight_decay', type=float, default=1e-4)
+    parser.add_argument('--val_split', type=float, default=0.1)
+    
+    # Model
+    parser.add_argument('--num_classes', type=int, default=6)
+    parser.add_argument('--fusion_type', type=str, default='attention',
+                       choices=['attention', 'late', 'early'])
+    
+    # Training
+    parser.add_argument('--batch_size', type=int, default=4)
     parser.add_argument('--epochs', type=int, default=50)
-    parser.add_argument('--warmup_epochs', type=int, default=5)
+    parser.add_argument('--lr', type=float, default=0.0001)
     parser.add_argument('--min_lr', type=float, default=1e-6)
-    parser.add_argument('--use_ema', action='store_true')
-    parser.add_argument('--use_mixup', action='store_true')
+    parser.add_argument('--weight_decay', type=float, default=0.01)
+    parser.add_argument('--optimizer', type=str, default='adamw',
+                       choices=['adamw', 'sgd'])
+    parser.add_argument('--warmup_epochs', type=int, default=5)
     parser.add_argument('--grad_clip', type=float, default=1.0)
-    parser.add_argument('--batch_size', type=int, default=8)
+    
+    # Loss
+    parser.add_argument('--loss_type', type=str, default='ce',
+                       choices=['ce', 'focal', 'label_smooth'])
+    
+    # Augmentation
+    parser.add_argument('--use_mixup', action='store_true')
+    parser.add_argument('--use_ema', action='store_true')
+    
+    # Others
     parser.add_argument('--num_workers', type=int, default=4)
-    parser.add_argument('--val_split', type=float, default=0.2)
-    parser.add_argument('--track_stream_acc', action='store_true')
-    parser.add_argument('--save_freq', type=int, default=5)
-    parser.add_argument('--run_name', type=str, default='baseline')
+    parser.add_argument('--save_freq', type=int, default=10)
+    parser.add_argument('--run_name', type=str, default='v1')
     parser.add_argument('--no_wandb', action='store_true')
+    parser.add_argument('--track_stream_acc', action='store_true')
     
     args = parser.parse_args()
     main(args)
-  
+    
+      
