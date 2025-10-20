@@ -1,9 +1,12 @@
-# Elderly-Action-Recognition-Challenge-at-WACV2025
-A transformer-based multi-modal solution for the **Elderly Action Recognition Challenge (WACV 2025)** that combines RGB, optical flow, and pose features to accurately recognize elderly Activities of Daily Living.
+**Elderly Action Recognition Challenge at WACV 2025**
+A transformer-based multi-modal solution that integrates RGB, optical flow, and pose features to recognize elderly Activities of Daily Living.
 
-Three-stream multi-modal approach:
-- RGB Stream (Video Transformer)
-- Pose Stream (Graph CNN)
-- Optical Flow Stream (CNN-LSTM)
+**Three-stream architecture:**
 
-Target: Beat 0.842 accuracy
+* **RGB Stream:** Video Transformer for spatial-temporal understanding
+* **Pose Stream:** Graph CNN for body joint dynamics
+* **Optical Flow Stream:** CNN-LSTM for motion representation
+
+**Dataset:** Based on the Toyota Smarthome dataset containing videos of elderly individuals performing daily activities in realistic home environments.
+
+**Goal:** Achieve accuracy exceeding 0.842 
